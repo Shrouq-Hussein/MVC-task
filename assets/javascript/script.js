@@ -166,30 +166,8 @@ let controller = {
 }
 
 
-
-
+// starts here
 $("document").ready(
     controller.init(),
 )
 
-
-
-
-
-
-
-
-
-// let img = document.querySelector(".avengers_img");
-// let count = document.querySelector(".counter");
-
-// let counter = 0
-// function updateCounter(count,counter) {
-//     count.innerHTML = `${counter}`
-
-// }
-// img.addEventListener("click", function () {
-//     counter += 1;
-//     updateCounter();
-
-// })
