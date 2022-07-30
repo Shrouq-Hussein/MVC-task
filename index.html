@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row   mt-5">
+            <!-- left side -->
+            <div class="col-3">
+                <h3>Members:</h3>
+                <p>Click on member's name to display his/her image</p>
+                <ul id="members_list"></ul>
+                <button type="button" class="btn btn-success" id="admin_mode_btn">Changecard</button>
+                <form id="adminForm " class="m-3 p-2">
+                    <p> Name:  <input type="text" class="adminInput" id="admin_form_name"></p>
+                    <p>Img src:   <input type="text" class="adminCatUrl" id="admin_form_img_src"></p>
+                    <p>number of Clicks:  <input type="text" class="adminCatClicks" id="admin_form_clicks"></p>
+                </form>
+                
+            </div>
+            <!-- right side -->
+            <div class="col-6 card imgs_container " >
+
+            </div>
+        </div>
+    </div>
+
+
+    
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- script -->
+    <script src="assets/javascript/script.js"></script>
+
+</body>
+
+</html>
