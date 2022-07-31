@@ -29,6 +29,11 @@ justify-content: center;}
     font-weight: bold;
     cursor: pointer;
 }
+#members_list li:hover{
+    background-color: rgb(126, 125, 125);
+    color: rgb(45, 105, 34);
+
+}
 #members_list{
     display: flex;
     flex-direction: column;
@@ -46,4 +51,9 @@ justify-content: center;}
 .show{
     display: block;
 }
+.clicks_num{
+    color: rgb(45, 105, 34);
+    font-weight: bold;
+}
+
 

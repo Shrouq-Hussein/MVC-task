@@ -77,7 +77,10 @@ let view = {
                 console.log(controller.getCurrentCard())
                 view.displayCurrentCard(controller.getCurrentCard())
                 $("#adminForm").toggleClass("show")
-
+            })
+            $("#admin_cancel").on("click", function (e) {
+                e.preventDefault();
+                $("#adminForm").toggleClass("show")
 
 
             })
@@ -95,7 +98,7 @@ let view = {
             <img src="${element.img}" class="card-img-top img " alt="...">
             <div class="card-body">
                 <div class="card-text  counterTxt">
-                    <h5 class=" ">Number of times this img was clicked : <span id="${element.counter_id}" > ${element.counter} </span></h5>
+                    <h5 class=" ">Number of times this img was clicked : <span id="${element.counter_id}" class="clicks_num" > ${element.counter} </span></h5>
                 </div>
             </div>
             </div>
