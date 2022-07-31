@@ -1,5 +1,6 @@
 let model = {
     currentCard: {},
+    isAdmin: true,
     data: [
 
         {
@@ -60,9 +61,28 @@ let view = {
         $(".imgs_container .img").on("click", function () {
             view.updateCardCounter()
         })
-        $(`#admin_mode_btn`).on("click", function () {
-            
-        })
+        if (model.isAdmin) {
+            $(`#admin_mode_btn`).on("click", function () {
+                $("#adminForm").toggleClass("show")
+            })
+            $("#admin_save").on("click", function (e) {
+                e.preventDefault();
+                let name = $("#admin_form_name").val()
+                let src = $("#admin_form_img_src").val()
+                let clicks = $("#admin_form_clicks").val()
+
+                controller.setCardTitle(name)
+                controller.setCardImg(src)
+                controller.setCardClicks(clicks)
+                console.log(controller.getCurrentCard())
+                view.displayCurrentCard(controller.getCurrentCard())
+                $("#adminForm").toggleClass("show")
+
+
+
+            })
+        }
+
 
     },
     membersList: $("#members_list"),
@@ -76,8 +96,6 @@ let view = {
             <div class="card-body">
                 <div class="card-text  counterTxt">
                     <h5 class=" ">Number of times this img was clicked : <span id="${element.counter_id}" > ${element.counter} </span></h5>
-                    
-                    
                 </div>
             </div>
             </div>
@@ -129,6 +147,10 @@ let view = {
 
 
     },
+    changeMemberList: function (cardId, newTitle) {
+        $(`[data-target = "${cardId}"]`).html(`${newTitle}`)
+    }
+    ,
 
 }
 
@@ -140,7 +162,6 @@ let controller = {
         view.init()
 
     },
-
     // mesh mot2keda hna wla f model?
     setCurrentCard: function (card) {
         model.currentCard = card
@@ -160,9 +181,24 @@ let controller = {
         return view.currentCardElement
     },
 
-
-
-
+    setCardTitle: function (name) {
+        if (name.length > 1) {
+            controller.getCurrentCard().name = name
+            view.changeMemberList(controller.getCurrentCard().id, name)
+        }
+    }
+    ,
+    setCardImg: function (src) {
+        if (src.length > 20) {
+            controller.getCurrentCard().img = src
+        }
+    }
+    ,
+    setCardClicks: function (numClicks) {
+        if (numClicks.length > 0 &&  /^\d+$/.test(numClicks)) {
+            controller.getCurrentCard().counter = numClicks
+        }
+    }
 }
 
 

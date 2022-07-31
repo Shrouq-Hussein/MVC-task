@@ -17,20 +17,23 @@
     <div class="container">
         <div class="row   mt-5">
             <!-- left side -->
-            <div class="col-3">
+            <div class="col-lg-3 col-md-3 col-sm-12">
                 <h3>Members:</h3>
                 <p>Click on member's name to display his/her image</p>
                 <ul id="members_list"></ul>
                 <button type="button" class="btn btn-success" id="admin_mode_btn">Changecard</button>
-                <form id="adminForm " class="m-3 p-2">
-                    <p> Name:  <input type="text" class="adminInput" id="admin_form_name"></p>
-                    <p>Img src:   <input type="text" class="adminCatUrl" id="admin_form_img_src"></p>
-                    <p>number of Clicks:  <input type="text" class="adminCatClicks" id="admin_form_clicks"></p>
+                <form id="adminForm" class="m-3 p-3 hide ">
+                    <p> Name:  <input type="text"  id="admin_form_name"></p>
+                    <p>Img src:   <input type="text"  id="admin_form_img_src"></p>
+                    <p>number of Clicks:  <input type="text"  id="admin_form_clicks"></p>
+                    <button id="admin_cancel" class="btn btn-success">Cancel</button>
+                    <button id="admin_save" class="btn btn-success" type="">Save</button>
+
                 </form>
                 
             </div>
             <!-- right side -->
-            <div class="col-6 card imgs_container " >
+            <div class="col-lg-6 col-md-6 col-sm-12 card imgs_container m-2" >
 
             </div>
         </div>

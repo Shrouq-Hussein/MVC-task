@@ -35,4 +35,15 @@ justify-content: center;}
     justify-content: space-around;
 }
 #adminForm{
+    border:3px solid rgb(126, 125, 125);
+    border-radius: 10px;
+    color: rgb(45, 105, 34);
 }
+.hide{
+    display: none;
+
+}
+.show{
+    display: block;
+}
+
